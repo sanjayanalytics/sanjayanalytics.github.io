@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,21 +13,20 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <img src="assets/Profile%20image.jpg" 
-         alt="Profile Image" 
-         class="profile-img">
-
+    <img src="assets/Profile%20image.jpg" alt="Profile Image" class="profile-img">
     <h1>Sanjay Kumar Thakur</h1>
     <p class="title">Data Analyst</p>
 
-    <!-- Top Buttons -->
+    <!-- Navigation Buttons -->
     <div class="top-buttons">
+        <a href="#about" class="btn">About</a>
         <a href="#skills" class="btn">Skills</a>
         <a href="#projects" class="btn">Projects</a>
         <a href="#certifications" class="btn">Certifications</a>
@@ -37,16 +37,17 @@
     </div>
 </header>
 
-<section>
+<!-- About Section -->
+<section id="about">
     <h2><i class="fas fa-user icon"></i> About Me</h2>
     <p>
-        I am a passionate Data Analyst with an MSc in Mathematics and a strong foundation in analytical thinking and problem-solving.
-        I specialize in Excel, Power BI, SQL, and Python to convert complex data into clear, actionable insights.
-        I enjoy uncovering patterns, building interactive dashboards, and helping businesses make data-driven decisions.
-        I am continuously learning and striving to grow in the field of data analytics.
+        I am a passionate Data Analyst with an MSc in Mathematics and strong analytical thinking skills.
+        I specialize in Excel, Power BI, SQL, and Python to transform complex data into meaningful insights.
+        I enjoy building dashboards and helping businesses make data-driven decisions.
     </p>
 </section>
 
+<!-- Skills Section -->
 <section id="skills">
     <h2><i class="fas fa-code icon"></i> Skills</h2>
     <ul>
@@ -59,26 +60,28 @@
     </ul>
 </section>
 
+<!-- Projects Section -->
 <section id="projects">
     <h2><i class="fas fa-folder-open icon"></i> Projects</h2>
     <ul>
         <li>
-            📊 Excel Superstore Sales Dashboard – 
+            📊 Excel Superstore Sales Dashboard –
             <a href="https://github.com/sanjayanalytics/Excel-Super-Store-Sales-Dashboard" target="_blank">
                 View Project
             </a>
         </li>
         <li>
-            📈 Excel Data Cleaning Project – 
+            📈 Excel Data Cleaning Project –
             <a href="#" target="_blank">View Project</a>
         </li>
         <li>
-            🗄 SQL Data Analysis Project – 
+            🗄 SQL Data Analysis Project –
             <a href="#" target="_blank">View Project</a>
         </li>
     </ul>
 </section>
 
+<!-- Certifications Section -->
 <section id="certifications">
     <h2><i class="fas fa-certificate icon"></i> Certifications</h2>
 
@@ -105,6 +108,7 @@
     </div>
 </section>
 
+<!-- Contact Section -->
 <section id="contact">
     <h2><i class="fas fa-envelope icon"></i> Contact</h2>
     <p>Email: sanjaykumarthakur516@gmail.com</p>
