@@ -140,3 +140,42 @@ footer {
         height: 130px;
     }
 }
+
+/* ===== Certifications Horizontal Scroll ===== */
+
+.cert-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.cert-card {
+    min-width: 45%;
+    flex: 0 0 auto;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cert-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
