@@ -1,19 +1,19 @@
-/* Reset */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* ================= BODY ================= */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #f4f6f9, #e2e8f0);
     color: #333;
     line-height: 1.6;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 header {
     background: linear-gradient(135deg, #1f2937, #111827);
     color: white;
@@ -45,7 +45,7 @@ header p {
     color: #cbd5e1;
 }
 
-/* Sections */
+/* ================= SECTIONS (ALL SAME ALIGN) ================= */
 section {
     background: white;
     margin: 40px auto;
@@ -60,7 +60,6 @@ section:hover {
     transform: translateY(-5px);
 }
 
-/* Section Titles */
 h2 {
     color: #1f2937;
     margin-bottom: 20px;
@@ -68,7 +67,7 @@ h2 {
     padding-left: 10px;
 }
 
-/* Skills List */
+/* ================= SKILLS ================= */
 ul {
     list-style: none;
 }
@@ -83,7 +82,7 @@ ul li:hover {
     color: #2563eb;
 }
 
-/* Links */
+/* ================= LINKS & BUTTONS ================= */
 a {
     color: #2563eb;
     text-decoration: none;
@@ -94,27 +93,145 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Certifications */
-.cert-img {
-    width: 100%;
-    max-width: 350px;
-    margin: 15px 0 30px 0;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+.top-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 8px 6px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    background: #ffffff;
+    color: #333;
+    border: 2px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #007bff;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.resume-btn {
+    background: #007bff;
+    color: white;
+}
+
+.resume-btn:hover {
+    background: #0056b3;
+}
+
+/* ================= CONTACT SECTION (NOW SAME ALIGN) ================= */
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 25px;
+    background: #1f2937;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-item i {
+    font-size: 18px;
+}
+
+.contact-item:hover {
+    background: #2563eb;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* ================= CERTIFICATIONS ================= */
+.cert-scroll-wrapper {
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.cert-scroll {
+    display: flex;
+    gap: 25px;
+    padding-bottom: 10px;
+}
+
+.cert-card {
+    min-width: 280px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.cert-img:hover {
-    transform: scale(1.03);
+.cert-card:hover {
+    transform: translateY(-8px);
 }
 
-/* Contact Section */
-.icon {
-    margin-right: 8px;
-    color: #2563eb;
+.cert-card img {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/* Footer */
+/* ================= MODAL ================= */
+.modern-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-wrapper {
+    position: relative;
+}
+
+#modalImg {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: white;
+    color: black;
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
 footer {
     background: #111827;
     color: white;
@@ -124,8 +241,9 @@ footer {
     margin-top: 40px;
 }
 
-/* Responsive Design */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+
     section {
         padding: 25px;
         margin: 20px;
@@ -139,4 +257,19 @@ footer {
         width: 130px;
         height: 130px;
     }
+
+    .contact-grid {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-item {
+        width: 90%;
+        justify-content: center;
+    }
+}
+
+/* ================= SMOOTH SCROLL ================= */
+html {
+    scroll-behavior: smooth;
 }
