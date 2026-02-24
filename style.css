@@ -68,7 +68,7 @@ h2 {
     padding-left: 10px;
 }
 
-/* Skills List */
+/* ================= SKILLS ================= */
 ul {
     list-style: none;
 }
@@ -83,7 +83,7 @@ ul li:hover {
     color: #2563eb;
 }
 
-/* Links */
+/* ================= LINKS & BUTTONS ================= */
 a {
     color: #2563eb;
     text-decoration: none;
@@ -94,7 +94,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ================= TOP BUTTONS ================= */
 .top-buttons {
     margin-top: 20px;
 }
@@ -165,7 +164,7 @@ footer {
     }
 }
 
-/* ================= CERTIFICATIONS SECTION ================= */
+/* ================= CERTIFICATIONS ================= */
 .cert-scroll-wrapper {
     overflow-x: auto;
     margin-top: 30px;
@@ -177,7 +176,6 @@ footer {
     padding-bottom: 10px;
 }
 
-/* Certificate Card */
 .cert-card {
     min-width: 280px;
     background: #ffffff;
@@ -193,7 +191,6 @@ footer {
     transform: translateY(-8px);
 }
 
-/* Fixed Modern Portfolio Image Size */
 .cert-card img {
     width: 220px;
     height: 150px;
@@ -249,4 +246,9 @@ footer {
 @keyframes zoomIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+/* ================= SMOOTH SCROLL ================= */
+html {
+    scroll-behavior: smooth;
 }
