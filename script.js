@@ -117,6 +117,25 @@ function closeModal() {
     document.getElementById("certModal").style.display = "none";
 }
 
+function openModal(src) {
+    const modal = document.getElementById("certModal");
+    const modalImg = document.getElementById("modalImg");
+    modal.style.display = "flex";
+    modalImg.src = src;
+}
+
+function closeModal() {
+    document.getElementById("certModal").style.display = "none";
+}
+
+/* Close modal when clicking outside image */
+window.onclick = function(event) {
+    const modal = document.getElementById("certModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
 
 
 
