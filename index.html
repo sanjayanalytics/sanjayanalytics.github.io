@@ -13,124 +13,131 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ================= CERTIFICATIONS SCROLL ================= */
+        .cert-scroll-wrapper {
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+
+        .cert-scroll {
+            display: flex;
+            gap: 25px;
+            min-width: max-content;
+        }
+
+        .cert-card {
+            flex: 0 0 auto;
+            width: 260px;
+            text-align: center;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            padding: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .cert-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .cert-card p {
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* ================= MODERN MODAL ================= */
+        .modern-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content-wrapper {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .modal-content-wrapper img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #fff;
+            color: #333;
+            font-size: 22px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header-section">
-    <div class="container">
-        <img src="assets/Profile%20image.jpg" alt="Profile Image" class="profile-img">
-        <h1>Sanjay Kumar Thakur</h1>
-        <p class="title">Data Analyst</p>
-
-        <div class="top-buttons">
-            <a href="#about" class="btn"><i class="fas fa-user"></i> About</a>
-            <a href="#skills" class="btn"><i class="fas fa-code"></i> Skills</a>
-            <a href="#projects" class="btn"><i class="fas fa-briefcase"></i> Projects</a>
-            <a href="#certifications" class="btn"><i class="fas fa-award"></i> Certifications</a>
-            <a href="#contact" class="btn"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="assets/Sanjay_Kumar_Thakur_Resume.pdf" download class="btn resume-btn">
-                <i class="fas fa-download"></i> Resume
-            </a>
-        </div>
-    </div>
-</header>
-
-<!-- ================= ABOUT ================= -->
-<section id="about" class="section about-section">
-    <div class="container">
-        <h2><i class="fas fa-user-circle section-icon"></i> About Me</h2>
-        <p>
-            I am a passionate Data Analyst with an MSc in Mathematics and strong analytical thinking skills.
-            I specialize in Excel, Power BI, SQL, and Python to transform complex data into meaningful insights.
-            I enjoy building dashboards and helping businesses make data-driven decisions.
-        </p>
-    </div>
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section id="skills" class="section skills-section">
-    <div class="container">
-        <h2><i class="fas fa-laptop-code section-icon"></i> Skills</h2>
-        <ul class="skills-list">
-            <li><i class="fas fa-file-excel"></i> Excel</li>
-            <li><i class="fas fa-chart-bar"></i> Power BI</li>
-            <li><i class="fas fa-database"></i> SQL</li>
-            <li><i class="fab fa-python"></i> Python</li>
-            <li><i class="fas fa-project-diagram"></i> Power Query</li>
-            <li><i class="fas fa-robot"></i> AI for Data Analysis</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section id="projects" class="section projects-section">
-    <div class="container">
-        <h2><i class="fas fa-briefcase section-icon"></i> Projects</h2>
-
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Excel Superstore Dashboard</h3>
-                <p>Sales analysis dashboard with KPIs and interactive visuals.</p>
-                <a href="https://github.com/sanjayanalytics/Excel-Super-Store-Sales-Dashboard" target="_blank">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Excel Data Cleaning</h3>
-                <p>Advanced data cleaning using formulas & Power Query.</p>
-                <a href="#">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <h3>SQL Data Analysis</h3>
-                <p>Business insights using complex SQL queries.</p>
-                <a href="#">View Project</a>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ================= CERTIFICATIONS ================= -->
 <section id="certifications" class="section certifications-section">
     <div class="container">
-        <h2><i class="fas fa-certificate section-icon"></i> Certifications</h2>
+        <h2><i class="fas fa-certificate"></i> Certifications</h2>
 
         <div class="cert-scroll-wrapper">
             <div class="cert-scroll">
 
-                <div class="cert-card">
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Mastery.png"
-                        alt="Excel Mastery"
-                        onclick="openModal(this.src)">
+                <div class="cert-card" onclick="openModal(this.querySelector('img').src)">
+                    <img src="assets/Excel Mastery.png" alt="Excel Mastery">
                     <p>Excel Mastery</p>
                 </div>
 
-                <div class="cert-card">
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Mastery.png"
-                        alt="Power BI Mastery"
-                        onclick="openModal(this.src)">
+                <div class="cert-card" onclick="openModal(this.querySelector('img').src)">
+                    <img src="assets/Power BI Mastery.png" alt="Power BI Mastery">
                     <p>Power BI Mastery</p>
                 </div>
 
-                <div class="cert-card">
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Zero%20to%20Dashboard%20Mastery%20in%20Power%20BI%20(Live).png"
-                        alt="Zero to Dashboard"
-                        onclick="openModal(this.src)">
+                <div class="cert-card" onclick="openModal(this.querySelector('img').src)">
+                    <img src="assets/Zero to Dashboard Mastery in Power BI (Live).png" alt="Zero to Dashboard">
                     <p>Zero to Dashboard (Live)</p>
                 </div>
 
-                <div class="cert-card">
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Marathon%20Class%20Live.png"
-                        alt="Excel Marathon"
-                        onclick="openModal(this.src)">
+                <div class="cert-card" onclick="openModal(this.querySelector('img').src)">
+                    <img src="assets/Excel Marathon Class Live.png" alt="Excel Marathon">
                     <p>Excel Marathon (Live)</p>
                 </div>
 
-                <div class="cert-card">
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Marathon%20Class%20Live.png"
-                        alt="Power BI Marathon"
-                        onclick="openModal(this.src)">
+                <div class="cert-card" onclick="openModal(this.querySelector('img').src)">
+                    <img src="assets/Power BI Marathon Class Live.png" alt="Power BI Marathon">
                     <p>Power BI Marathon (Live)</p>
                 </div>
 
@@ -139,40 +146,24 @@
     </div>
 </section>
 
-<!-- ================= MODERN MODAL ================= -->
-<div id="certModal" class="modern-modal">
-    <div class="modal-content-wrapper">
+<!-- ================= MODAL ================= -->
+<div id="certModal" class="modern-modal" onclick="closeModal()">
+    <div class="modal-content-wrapper" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="closeModal()">&times;</span>
         <img id="modalImg">
     </div>
 </div>
 
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="section contact-section">
-    <div class="container">
-        <h2><i class="fas fa-address-card section-icon"></i> Contact</h2>
+<script>
+    function openModal(src) {
+        document.getElementById("certModal").style.display = "flex";
+        document.getElementById("modalImg").src = src;
+    }
 
-        <div class="contact-grid">
-            <a href="mailto:sanjaykumarthakur516@gmail.com" class="contact-item">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-
-            <a href="https://linkedin.com/in/sanjay-kumar-thakur-data-analyst" target="_blank" class="contact-item">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-
-            <a href="https://github.com/sanjayanalytics" target="_blank" class="contact-item">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Sanjay Kumar Thakur | All Rights Reserved</p>
-</footer>
-
-<script src="script.js"></script>
+    function closeModal() {
+        document.getElementById("certModal").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
