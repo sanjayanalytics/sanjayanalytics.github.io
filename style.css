@@ -45,7 +45,7 @@ header p {
     color: #cbd5e1;
 }
 
-/* ================= SECTIONS (ALL SAME ALIGN) ================= */
+/* ================= SECTIONS ================= */
 section {
     background: white;
     margin: 40px auto;
@@ -126,7 +126,12 @@ a:hover {
     background: #0056b3;
 }
 
-/* ================= CONTACT SECTION (NOW SAME ALIGN) ================= */
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+    text-align: center;
+    padding: 60px 20px;
+}
 
 .contact-grid {
     display: flex;
