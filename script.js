@@ -98,3 +98,26 @@ topBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+function openModal(src) {
+    document.getElementById("certModal").style.display = "block";
+    document.getElementById("modalImage").src = src;
+}
+
+function closeModal() {
+    document.getElementById("certModal").style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
