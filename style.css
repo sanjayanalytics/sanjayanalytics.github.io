@@ -306,3 +306,47 @@ a:hover {
 .cert-img:hover {
     transform: scale(1.05);
 }
+/* ================= CERTIFICATIONS HORIZONTAL SCROLL ================= */
+
+.cert-scroll-wrapper {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.cert-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+}
+
+.cert-card {
+    min-width: 300px;
+    flex: 0 0 auto;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cert-img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cert-img:hover {
+    transform: scale(1.05);
+}
+
+/* Optional: Better scrollbar */
+.cert-scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cert-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
