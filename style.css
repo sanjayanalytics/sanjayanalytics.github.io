@@ -62,14 +62,14 @@ section:hover {
 
 /* ================= SECTION TITLE ================= */
 .section-title {
-    font-size: 28px;
-    margin-bottom: 30px;
-    text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
     color: #1f2937;
+    text-align: left;   /* LEFT ALIGN */
 }
 
 .section-title i {
-    margin-right: 10px;
+    margin-right: 8px;
     color: #2563eb;
 }
 
@@ -80,7 +80,7 @@ ul {
 
 ul li {
     padding: 10px 0;
-    font-size: 18px;
+    font-size: 17px;
     transition: color 0.3s;
 }
 
@@ -132,27 +132,25 @@ a:hover {
     background: #0056b3;
 }
 
-/* ================= CONTACT SECTION ================= */
+/* ================= CONTACT SECTION (LEFT ALIGN) ================= */
 
 .contact-section {
-    text-align: center;
-    padding: 60px 20px;
+    padding: 40px;
+    text-align: left;   /* LEFT ALIGN */
 }
 
 .contact-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 14px 25px;
+    padding: 12px 22px;
     background: #1f2937;
     color: white;
     text-decoration: none;
@@ -161,33 +159,39 @@ a:hover {
     font-weight: 500;
 }
 
-.contact-item i {
-    font-size: 18px;
-}
-
 .contact-item:hover {
     background: #2563eb;
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
-/* ================= CERTIFICATIONS (UPDATED) ================= */
+/* ================= CERTIFICATIONS (LEFT + THEME SCROLL) ================= */
 
 .cert-container {
     display: flex;
     gap: 25px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
+/* Subtle Professional Scrollbar */
 .cert-container::-webkit-scrollbar {
-    height: 8px;
+    height: 6px;
+}
+
+.cert-container::-webkit-scrollbar-track {
+    background: #e2e8f0;   /* Same theme background */
+    border-radius: 10px;
 }
 
 .cert-container::-webkit-scrollbar-thumb {
-    background: #2563eb;
+    background: #cbd5e1;   /* Soft grey-blue theme */
     border-radius: 10px;
+}
+
+.cert-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }
 
 .cert-card {
@@ -208,7 +212,6 @@ a:hover {
 .cert-card img {
     width: 100%;
     border-radius: 10px;
-    cursor: pointer;
 }
 
 .cert-card p {
@@ -271,22 +274,12 @@ footer {
         margin: 20px;
     }
 
-    header h1 {
-        font-size: 24px;
-    }
-
-    .profile-img {
-        width: 130px;
-        height: 130px;
-    }
-
     .contact-grid {
         flex-direction: column;
-        width: 100%;
     }
 
     .contact-item {
-        width: 90%;
+        width: 100%;
         justify-content: center;
     }
 }
