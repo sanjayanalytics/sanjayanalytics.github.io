@@ -1,11 +1,11 @@
-/* Reset */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* ================= BODY ================= */
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, #f4f6f9, #e2e8f0);
@@ -13,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 header {
     background: linear-gradient(135deg, #1f2937, #111827);
     color: white;
@@ -45,7 +45,7 @@ header p {
     color: #cbd5e1;
 }
 
-/* Sections */
+/* ================= SECTIONS ================= */
 section {
     background: white;
     margin: 40px auto;
@@ -94,80 +94,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Certifications */
-.cert-img {
-    width: 100%;
-    max-width: 350px;
-    margin: 15px 0 30px 0;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.cert-img:hover {
-    transform: scale(1.03);
-}
-
-/* Contact Section */
-.icon {
-    margin-right: 8px;
-    color: #2563eb;
-}
-
-/* Footer */
-footer {
-    background: #111827;
-    color: white;
-    padding: 25px;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 40px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    section {
-        padding: 25px;
-        margin: 20px;
-    }
-
-    header h1 {
-        font-size: 24px;
-    }
-
-    .profile-img {
-        width: 130px;
-        height: 130px;
-    }
-}
-
-/* ===== Certifications Horizontal Scroll ===== */
-
-.cert-container {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px 0;
-}
-
-.cert-card {
-    min-width: 45%;
-    flex: 0 0 auto;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.cert-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* ===== Top Buttons Styling ===== */
-
+/* ================= TOP BUTTONS ================= */
 .top-buttons {
     margin-top: 20px;
 }
@@ -193,7 +120,7 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
 }
 
-/* Resume Button Special Style */
+/* Resume Button */
 .resume-btn {
     background: #007bff;
     color: white;
@@ -205,116 +132,40 @@ footer {
     border-color: #0056b3;
 }
 
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
+/* ================= CONTACT ================= */
+.icon {
+    margin-right: 8px;
+    color: #2563eb;
 }
 
-/* Modal Background */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.85);
-    text-align: center;
-}
-
-/* Modal Image */
-.modal-content {
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(255,255,255,0.3);
-    animation: zoomIn 0.3s ease;
-}
-
-/* Close Button */
-.close {
-    position: absolute;
-    top: 25px;
-    right: 40px;
+/* ================= FOOTER ================= */
+footer {
+    background: #111827;
     color: white;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-/* Animation */
-@keyframes zoomIn {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* Hover Effect */
-.cert-img {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.cert-img:hover {
-    transform: scale(1.05);
-}
-
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.cert-card {
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 25px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
+    font-size: 14px;
+    margin-top: 40px;
 }
 
-.cert-card:hover {
-    transform: translateY(-5px);
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    section {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .profile-img {
+        width: 130px;
+        height: 130px;
+    }
 }
 
-.cert-img {
-    width: 100%;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-/* Modal Style */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.85);
-}
-
-.modal-content {
-    display: block;
-    margin: auto;
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-}
-/* Horizontal Scroll Layout */
+/* ================= CERTIFICATIONS SECTION ================= */
 .cert-scroll-wrapper {
     overflow-x: auto;
     margin-top: 30px;
@@ -326,8 +177,9 @@ html {
     padding-bottom: 10px;
 }
 
+/* Certificate Card */
 .cert-card {
-    min-width: 300px;
+    min-width: 280px;
     background: #ffffff;
     border-radius: 15px;
     padding: 15px;
@@ -341,12 +193,21 @@ html {
     transform: translateY(-8px);
 }
 
+/* Fixed Modern Portfolio Image Size */
 .cert-card img {
-    width: 100%;
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Modern Modal */
+.cert-card img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= MODERN MODAL ================= */
 .modern-modal {
     display: none;
     position: fixed;
@@ -360,13 +221,11 @@ html {
 
 .modal-content-wrapper {
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
     animation: zoomIn 0.3s ease;
 }
 
 #modalImg {
-    width: 100%;
+    max-width: 90vw;
     max-height: 85vh;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
@@ -378,30 +237,16 @@ html {
     right: -15px;
     background: white;
     color: black;
-    font-size: 24px;
+    font-size: 22px;
     width: 35px;
     height: 35px;
     border-radius: 50%;
     text-align: center;
     line-height: 35px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 @keyframes zoomIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
