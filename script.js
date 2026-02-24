@@ -69,29 +69,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-});
 
+    // ===============================
+    // NEW CERTIFICATE MODAL (UPDATED)
+    // ===============================
 
-// ===============================
-// CERTIFICATE MODAL
-// ===============================
-
-function openModal(src) {
     const modal = document.getElementById("certModal");
-    const modalImg = document.getElementById("modalImg");
+    const modalImg = document.getElementById("modalImage");
+    const certImages = document.querySelectorAll(".cert-card img");
+    const closeBtn = document.querySelector(".close");
 
-    modal.style.display = "flex";
-    modalImg.src = src;
-}
+    certImages.forEach(img => {
+        img.addEventListener("click", function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+    });
 
-function closeModal() {
-    document.getElementById("certModal").style.display = "none";
-}
-
-// Close modal on outside click
-window.onclick = function (event) {
-    const modal = document.getElementById("certModal");
-    if (event.target === modal) {
+    closeBtn.addEventListener("click", function () {
         modal.style.display = "none";
-    }
-};
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+});
