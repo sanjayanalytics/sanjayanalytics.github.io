@@ -103,3 +103,14 @@ window.addEventListener("click", function(event) {
         closeModal();
     }
 });
+
+// ===============================
+// Horizontal Scroll for Certifications
+// ===============================
+function scrollCerts(value) {
+    const container = document.getElementById("certScroll");
+    container.scrollBy({
+        left: value,
+        behavior: "smooth"
+    });
+}
