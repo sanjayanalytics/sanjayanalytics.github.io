@@ -109,3 +109,11 @@ function openModal(element) {
 function closeModal() {
     document.getElementById("certModal").style.display = "none";
 }
+function openModal(src) {
+    document.getElementById("certModal").style.display = "block";
+    document.getElementById("modalImage").src = src;
+}
+
+function closeModal() {
+    document.getElementById("certModal").style.display = "none";
+}
