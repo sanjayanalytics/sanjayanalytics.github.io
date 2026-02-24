@@ -1,52 +1,142 @@
-/* ================= CERTIFICATIONS ================= */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.certifications-section {
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f4f6f9, #e2e8f0);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: white;
+    padding: 60px 20px;
     text-align: center;
 }
 
-.scroll-hint {
-    font-size: 14px;
-    color: gray;
-    margin-bottom: 15px;
-}
-
-/* Horizontal Scroll Container */
-.certifications-scroll {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding: 20px 10px;
-    scroll-behavior: smooth;
-}
-
-/* Scrollbar Styling */
-.certifications-scroll::-webkit-scrollbar {
-    height: 8px;
-}
-
-.certifications-scroll::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-/* Certificate Card */
-.cert-card {
-    min-width: 250px;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
-    cursor: pointer;
 }
 
-.cert-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+.profile-img:hover {
+    transform: scale(1.05);
 }
 
-.cert-card:hover {
+header h1 {
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+header p {
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+/* Sections */
+section {
+    background: white;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
     transform: translateY(-5px);
+}
+
+/* Section Titles */
+h2 {
+    color: #1f2937;
+    margin-bottom: 20px;
+    border-left: 5px solid #2563eb;
+    padding-left: 10px;
+}
+
+/* Skills List */
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 10px 0;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+ul li:hover {
+    color: #2563eb;
+}
+
+/* Links */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Certifications */
+.cert-img {
+    width: 100%;
+    max-width: 350px;
+    margin: 15px 0 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.cert-img:hover {
+    transform: scale(1.03);
+}
+
+/* Contact Section */
+.icon {
+    margin-right: 8px;
+    color: #2563eb;
+}
+
+/* Footer */
+footer {
+    background: #111827;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .profile-img {
+        width: 130px;
+        height: 130px;
+    }
 }
