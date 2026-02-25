@@ -1,4 +1,6 @@
-// Wait until page fully loads
+// ===============================
+// WAIT UNTIL DOM FULLY LOAD
+// ===============================
 document.addEventListener("DOMContentLoaded", function () {
 
     const modal = document.getElementById("certModal");
@@ -7,27 +9,52 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlay = document.querySelector(".modal-overlay");
     const certCards = document.querySelectorAll(".cert-card");
 
-    // ================= OPEN MODAL =================
+    // Safety check (important)
+    if (!modal || !modalImg || certCards.length === 0) return;
+
+    // ===============================
+    // OPEN MODAL
+    // ===============================
     certCards.forEach(card => {
         card.addEventListener("click", function () {
+
             const img = this.querySelector("img");
+            if (!img) return;
+
             modalImg.src = img.src;
             modal.classList.add("active");
             document.body.style.overflow = "hidden";
         });
     });
 
-    // ================= CLOSE MODAL =================
+    // ===============================
+    // CLOSE MODAL FUNCTION
+    // ===============================
     function closeModal() {
         modal.classList.remove("active");
         document.body.style.overflow = "auto";
+        modalImg.src = ""; // Clear image
     }
 
-    closeBtn.addEventListener("click", closeModal);
-    overlay.addEventListener("click", closeModal);
+    // ===============================
+    // CLOSE BUTTON
+    // ===============================
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
 
+    // ===============================
+    // OVERLAY CLICK CLOSE
+    // ===============================
+    if (overlay) {
+        overlay.addEventListener("click", closeModal);
+    }
+
+    // ===============================
+    // ESC KEY CLOSE
+    // ===============================
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
+        if (e.key === "Escape" && modal.classList.contains("active")) {
             closeModal();
         }
     });
