@@ -13,6 +13,72 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Quick CSS for horizontal scroll of certifications */
+        .cert-scroll-wrapper {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 0;
+        }
+        .cert-row {
+            display: inline-flex;
+            gap: 20px;
+        }
+        .cert-card {
+            display: inline-block;
+            width: 250px;
+            text-align: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .cert-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+        /* Modal styles */
+        .modern-modal {
+            display: none;
+            position: fixed;
+            top:0; left:0;
+            width: 100%; height:100%;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modern-modal.active {
+            display: flex;
+        }
+        .modal-overlay {
+            position:absolute;
+            top:0; left:0;
+            width:100%; height:100%;
+            background: rgba(0,0,0,0.6);
+        }
+        .modal-box {
+            position: relative;
+            z-index: 10;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .close-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -67,20 +133,17 @@
 <section id="projects" class="section projects-section">
     <div class="container">
         <h2><i class="fas fa-briefcase section-icon"></i> Projects</h2>
-
         <div class="project-grid">
             <div class="project-card">
                 <h3>Excel Superstore Dashboard</h3>
                 <p>Sales analysis dashboard with KPIs and interactive visuals.</p>
                 <a href="https://github.com/sanjayanalytics/Excel-Super-Store-Sales-Dashboard" target="_blank">View Project</a>
             </div>
-
             <div class="project-card">
                 <h3>Excel Data Cleaning</h3>
                 <p>Advanced data cleaning using formulas & Power Query.</p>
                 <a href="#">View Project</a>
             </div>
-
             <div class="project-card">
                 <h3>SQL Data Analysis</h3>
                 <p>Business insights using complex SQL queries.</p>
@@ -97,60 +160,70 @@
 
         <div class="cert-scroll-wrapper">
             <div class="cert-row">
-                <!-- Certificate Cards -->
+                <!-- Excel Mastery -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Excel Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Mastery.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Mastery.png" alt="Excel Mastery">
                 </div>
 
+                <!-- Power BI Mastery -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Power BI Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Mastery.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Mastery.png" alt="Power BI Mastery">
                 </div>
 
+                <!-- Zero to Dashboard Mastery -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Zero to Dashboard Mastery in Power BI (Live)</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Zero%20to%20Dashboard%20Mastery%20in%20Power%20BI%20(Live).png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Zero%20to%20Dashboard%20Mastery%20in%20Power%20BI%20(Live).png" alt="Zero to Dashboard Mastery">
                 </div>
 
+                <!-- Excel Marathon Class -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Excel Marathon Class Live</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Marathon%20Class%20Live.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Marathon%20Class%20Live.png" alt="Excel Marathon Class">
                 </div>
 
+                <!-- Power BI Marathon Class -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Power BI Marathon Class Live</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Marathon%20Class%20Live.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Marathon%20Class%20Live.png" alt="Power BI Marathon Class">
                 </div>
 
+                <!-- Presentation Mastery -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Presentation Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Presentation%20Mastery.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Presentation%20Mastery.png" alt="Presentation Mastery">
                 </div>
 
+                <!-- AI/ChatGPT in MS-Office -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>AI/ChatGPT in MS-Office</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/AI%2FChatGPT%20in%20MS-Office.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/AI%2FChatGPT%20in%20MS-Office.png" alt="AI/ChatGPT in MS-Office">
                 </div>
 
+                <!-- Power Query Mastery -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Power Query Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20Query%20Mastery.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20Query%20Mastery.png" alt="Power Query Mastery">
                 </div>
 
+                <!-- Excel MIS & Dashboard Expert Course -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Excel MIS & Dashboard Expert Course</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20MIS%20%26%20Dashboard%20Expert%20Course.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20MIS%20%26%20Dashboard%20Expert%20Course.png" alt="Excel MIS & Dashboard Expert Course">
                 </div>
 
+                <!-- 7-Days Power BI Micro Course -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>7-Days Power BI Micro Course</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/7-Days%20Power%20BI%20Micro%20Course.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/7-Days%20Power%20BI%20Micro%20Course.png" alt="7-Days Power BI Micro Course">
                 </div>
 
+                <!-- Excel Beginners to Advance -->
                 <div class="cert-card" onclick="openModal(this)">
                     <p><strong>Excel Beginners to Advance</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Beginners%20to%20Advance.png" class="cert-img">
+                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Beginners%20to%20Advance.png" alt="Excel Beginners to Advance">
                 </div>
             </div>
         </div>
@@ -161,16 +234,13 @@
 <section id="contact" class="section contact-section">
     <div class="container">
         <h2><i class="fas fa-address-card section-icon"></i> Contact</h2>
-
         <div class="contact-grid">
             <a href="mailto:sanjaykumarthakur516@gmail.com" class="contact-item">
                 <i class="fas fa-envelope"></i> Email
             </a>
-
             <a href="https://linkedin.com/in/sanjay-kumar-thakur-data-analyst" target="_blank" class="contact-item">
                 <i class="fab fa-linkedin"></i> LinkedIn
             </a>
-
             <a href="https://github.com/sanjayanalytics" target="_blank" class="contact-item">
                 <i class="fab fa-github"></i> GitHub
             </a>
@@ -194,7 +264,6 @@
     </div>
 </div>
 
-<!-- ================= SCRIPT ================= -->
 <script>
     function openModal(card) {
         const modal = document.getElementById("certModal");
@@ -204,7 +273,6 @@
         modal.classList.add("active");
         document.body.style.overflow = "hidden";
     }
-
     function closeModal() {
         const modal = document.getElementById("certModal");
         modal.classList.remove("active");
