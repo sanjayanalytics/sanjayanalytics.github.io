@@ -11,70 +11,68 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Quick CSS for horizontal scroll of certifications */
-        .cert-scroll-wrapper {
-            overflow-x: auto;
-            white-space: nowrap;
-            padding: 10px 0;
+        /* ================= CERTIFICATIONS GRID ================= */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
-        .cert-row {
-            display: inline-flex;
-            gap: 20px;
-        }
+
         .cert-card {
-            display: inline-block;
-            width: 250px;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
             text-align: center;
-            background: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             cursor: pointer;
+            transition: 0.3s ease;
         }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
         .cert-card img {
             width: 100%;
             border-radius: 8px;
-            margin-top: 5px;
+            margin-top: 10px;
         }
-        /* Modal styles */
+
+        /* ================= MODAL ================= */
         .modern-modal {
             display: none;
             position: fixed;
-            top:0; left:0;
-            width: 100%; height:100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             justify-content: center;
             align-items: center;
+            background: rgba(0,0,0,0.7);
             z-index: 1000;
         }
+
         .modern-modal.active {
             display: flex;
         }
-        .modal-overlay {
-            position:absolute;
-            top:0; left:0;
-            width:100%; height:100%;
-            background: rgba(0,0,0,0.6);
-        }
+
         .modal-box {
-            position: relative;
-            z-index: 10;
             max-width: 90%;
             max-height: 90%;
         }
+
         .modal-image {
             width: 100%;
-            height: auto;
             border-radius: 10px;
         }
+
         .close-btn {
             position: absolute;
-            top: -10px;
-            right: -10px;
-            font-size: 30px;
+            top: 25px;
+            right: 35px;
+            font-size: 35px;
             color: #fff;
             cursor: pointer;
         }
@@ -82,201 +80,104 @@
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header-section">
-    <div class="container">
-        <img src="assets/Profile%20image.jpg" alt="Profile Image" class="profile-img">
-        <h1>Sanjay Kumar Thakur</h1>
-        <p class="title">Data Analyst</p>
-
-        <div class="top-buttons">
-            <a href="#about" class="btn"><i class="fas fa-user"></i> About</a>
-            <a href="#skills" class="btn"><i class="fas fa-code"></i> Skills</a>
-            <a href="#projects" class="btn"><i class="fas fa-briefcase"></i> Projects</a>
-            <a href="#certifications" class="btn"><i class="fas fa-award"></i> Certifications</a>
-            <a href="#contact" class="btn"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="assets/Sanjay_Kumar_Thakur_Resume.pdf" download class="btn resume-btn">
-                <i class="fas fa-download"></i> Resume
-            </a>
-        </div>
-    </div>
-</header>
-
-<!-- ================= ABOUT ================= -->
-<section id="about" class="section about-section">
-    <div class="container">
-        <h2><i class="fas fa-user-circle section-icon"></i> About Me</h2>
-        <p>
-            I am a passionate Data Analyst with an MSc in Mathematics and strong analytical thinking skills.
-            I specialize in Excel, Power BI, SQL, and Python to transform complex data into meaningful insights.
-            I enjoy building dashboards and helping businesses make data-driven decisions.
-        </p>
-    </div>
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section id="skills" class="section skills-section">
-    <div class="container">
-        <h2><i class="fas fa-laptop-code section-icon"></i> Skills</h2>
-        <ul class="skills-list">
-            <li><i class="fas fa-file-excel"></i> Excel</li>
-            <li><i class="fas fa-chart-bar"></i> Power BI</li>
-            <li><i class="fas fa-database"></i> SQL</li>
-            <li><i class="fab fa-python"></i> Python</li>
-            <li><i class="fas fa-project-diagram"></i> Power Query</li>
-            <li><i class="fas fa-robot"></i> AI for Data Analysis</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section id="projects" class="section projects-section">
-    <div class="container">
-        <h2><i class="fas fa-briefcase section-icon"></i> Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Excel Superstore Dashboard</h3>
-                <p>Sales analysis dashboard with KPIs and interactive visuals.</p>
-                <a href="https://github.com/sanjayanalytics/Excel-Super-Store-Sales-Dashboard" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>Excel Data Cleaning</h3>
-                <p>Advanced data cleaning using formulas & Power Query.</p>
-                <a href="#">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>SQL Data Analysis</h3>
-                <p>Business insights using complex SQL queries.</p>
-                <a href="#">View Project</a>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ================= CERTIFICATIONS ================= -->
 <section id="certifications" class="section certifications-section">
     <div class="container">
         <h2><i class="fas fa-certificate section-icon"></i> Certifications</h2>
 
-        <div class="cert-scroll-wrapper">
-            <div class="cert-row">
-                <!-- Excel Mastery -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Excel Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Mastery.png" alt="Excel Mastery">
-                </div>
+        <div class="cert-grid">
 
-                <!-- Power BI Mastery -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Power BI Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Mastery.png" alt="Power BI Mastery">
-                </div>
-
-                <!-- Zero to Dashboard Mastery -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Zero to Dashboard Mastery in Power BI (Live)</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Zero%20to%20Dashboard%20Mastery%20in%20Power%20BI%20(Live).png" alt="Zero to Dashboard Mastery">
-                </div>
-
-                <!-- Excel Marathon Class -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Excel Marathon Class Live</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Marathon%20Class%20Live.png" alt="Excel Marathon Class">
-                </div>
-
-                <!-- Power BI Marathon Class -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Power BI Marathon Class Live</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Marathon%20Class%20Live.png" alt="Power BI Marathon Class">
-                </div>
-
-                <!-- Presentation Mastery -->
-                 <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Presentation Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Presemtation%20Mastery%20.png" alt="Presentation Mastery">
-                </div>
-                <!-- AI/ChatGPT in MS-Office -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>AI/ChatGPT in MS-Office</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/AI%2FChatGPT%20in%20MS-Office.png" alt="AI/ChatGPT in MS-Office">
-                </div>
-
-                <!-- Power Query Mastery -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Power Query Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20Query%20Mastery.png" alt="Power Query Mastery">
-                </div>
-
-                <!-- Excel MIS & Dashboard Expert Course -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Excel MIS & Dashboard Expert Course</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20MIS%20%26%20Dashboard%20Expert%20Course.png" alt="Excel MIS & Dashboard Expert Course">
-                </div>
-
-                <!-- 7-Days Power BI Micro Course -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>7-Days Power BI Micro Course</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/7-Days%20Power%20BI%20Micro%20Course.png" alt="7-Days Power BI Micro Course">
-                </div>
-
-                <!-- Excel Beginners to Advance -->
-                <div class="cert-card" onclick="openModal(this)">
-                    <p><strong>Excel Beginners to Advance</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Beginners%20to%20Advance.png" alt="Excel Beginners to Advance">
-                </div>
+            <!-- Excel Mastery -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Excel Mastery</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Mastery.png">
             </div>
+
+            <!-- Power BI Mastery -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Power BI Mastery</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Mastery.png">
+            </div>
+
+            <!-- Zero to Dashboard Mastery -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Zero to Dashboard Mastery in Power BI (Live)</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Zero%20to%20Dashboard%20Mastery%20in%20Power%20BI%20(Live).png">
+            </div>
+
+            <!-- Excel Marathon Class -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Excel Marathon Class Live</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Marathon%20Class%20Live.png">
+            </div>
+
+            <!-- Power BI Marathon Class -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Power BI Marathon Class Live</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Marathon%20Class%20Live.png">
+            </div>
+
+            <!-- Presentation Mastery -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Presentation Mastery</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Presemtation%20Mastery%20.png">
+            </div>
+
+            <!-- AI/ChatGPT in MS-Office -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>AI/ChatGPT in MS-Office</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/AI%2FChatGPT%20in%20MS-Office.png">
+            </div>
+
+            <!-- Power Query Mastery -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Power Query Mastery</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20Query%20Mastery.png">
+            </div>
+
+            <!-- Excel MIS & Dashboard Expert Course -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Excel MIS & Dashboard Expert Course</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20MIS%20%26%20Dashboard%20Expert%20Course.png">
+            </div>
+
+            <!-- 7-Days Power BI Micro Course -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>7-Days Power BI Micro Course</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/7-Days%20Power%20BI%20Micro%20Course.png">
+            </div>
+
+            <!-- Excel Beginners to Advance -->
+            <div class="cert-card" onclick="openModal(this)">
+                <p><strong>Excel Beginners to Advance</strong></p>
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Beginners%20to%20Advance.png">
+            </div>
+
         </div>
     </div>
 </section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="section contact-section">
-    <div class="container">
-        <h2><i class="fas fa-address-card section-icon"></i> Contact</h2>
-        <div class="contact-grid">
-            <a href="mailto:sanjaykumarthakur516@gmail.com" class="contact-item">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-            <a href="https://linkedin.com/in/sanjay-kumar-thakur-data-analyst" target="_blank" class="contact-item">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/sanjayanalytics" target="_blank" class="contact-item">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="modern-footer">
-    <div class="footer-bottom">
-        <p>© 2026 Sanjay Kumar Thakur | All Rights Reserved</p>
-    </div>
-</footer>
 
 <!-- ================= MODAL ================= -->
 <div id="certModal" class="modern-modal">
-    <div class="modal-overlay" onclick="closeModal()"></div>
+    <span class="close-btn" onclick="closeModal()">&times;</span>
     <div class="modal-box">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
         <img id="modalImage" class="modal-image">
     </div>
 </div>
 
 <script>
-    function openModal(card) {
-        const modal = document.getElementById("certModal");
-        const modalImg = document.getElementById("modalImage");
-        const img = card.querySelector("img");
-        modalImg.src = img.src;
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
-    }
-    function closeModal() {
-        const modal = document.getElementById("certModal");
-        modal.classList.remove("active");
-        document.body.style.overflow = "auto";
-    }
+function openModal(card){
+    const modal = document.getElementById("certModal");
+    const img = card.querySelector("img");
+    document.getElementById("modalImage").src = img.src;
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeModal(){
+    document.getElementById("certModal").classList.remove("active");
+    document.body.style.overflow = "auto";
+}
 </script>
 
 </body>
