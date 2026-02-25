@@ -24,3 +24,22 @@ document.addEventListener("keydown", function (e) {
         closeModal();
     }
 });
+
+function openModal(card) {
+    const modal = document.getElementById("certModal");
+    const modalImg = document.getElementById("modalImage");
+    const img = card.querySelector("img");
+
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+}
+
+function closeModal() {
+    document.getElementById("certModal").style.display = "none";
+}
+
+window.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        closeModal();
+    }
+});
