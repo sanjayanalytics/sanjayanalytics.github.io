@@ -90,50 +90,46 @@
         </div>
     </div>
 </section>
-
 <!-- ================= CERTIFICATIONS ================= -->
 <section id="certifications" class="section certifications-section">
     <div class="container">
         <h2><i class="fas fa-certificate section-icon"></i> Certifications</h2>
 
-        <div class="cert-scroll-wrapper">
-            <div class="cert-row">
+        <div class="cert-grid">
 
-                <div class="cert-card">
-                    <p><strong>Excel Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Mastery.png"
-                         class="cert-img" onclick="openModal(this.src)">
+            <div class="cert-card" onclick="openModal(this)">
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Mastery.png" alt="Excel Mastery">
+                <div class="cert-overlay">
+                    <h3>Excel Mastery</h3>
+                    <p>Click to View</p>
                 </div>
-
-                <div class="cert-card">
-                    <p><strong>Power BI Mastery</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Mastery.png"
-                         class="cert-img" onclick="openModal(this.src)">
-                </div>
-
-                <div class="cert-card">
-                    <p><strong>Zero to Dashboard Mastery in Power BI (Live)</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Zero%20to%20Dashboard%20Mastery%20in%20Power%20BI%20(Live).png"
-                         class="cert-img" onclick="openModal(this.src)">
-                </div>
-
-                <div class="cert-card">
-                    <p><strong>Excel Marathon Class Live</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Excel%20Marathon%20Class%20Live.png"
-                         class="cert-img" onclick="openModal(this.src)">
-                </div>
-
-                <div class="cert-card">
-                    <p><strong>Power BI Marathon Class Live</strong></p>
-                    <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Marathon%20Class%20Live.png"
-                         class="cert-img" onclick="openModal(this.src)">
-                </div>
-
             </div>
+
+            <div class="cert-card" onclick="openModal(this)">
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Power%20BI%20Mastery.png" alt="Power BI Mastery">
+                <div class="cert-overlay">
+                    <h3>Power BI Mastery</h3>
+                    <p>Click to View</p>
+                </div>
+            </div>
+
+            <div class="cert-card" onclick="openModal(this)">
+                <img src="https://raw.githubusercontent.com/sanjayanalytics/sanjayanalytics.github.io/main/assets/Zero%20to%20Dashboard%20Mastery%20in%20Power%20BI%20(Live).png" alt="Zero to Dashboard">
+                <div class="cert-overlay">
+                    <h3>Zero to Dashboard Mastery</h3>
+                    <p>Click to View</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
+<!-- Modern Modal -->
+<div id="certModal" class="cert-modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage">
+</div>
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="section contact-section">
     <div class="container">
