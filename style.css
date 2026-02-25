@@ -1,15 +1,177 @@
-/* ================= CERTIFICATIONS SECTION ================= */
-
-.certifications-section {
-    padding: 60px 20px;
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ================= BODY ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f4f6f9, #e2e8f0);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+header p {
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    background: white;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+/* ================= SECTION TITLE ================= */
+.section-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #1f2937;
+    text-align: left;
+}
+
+.section-title i {
+    margin-right: 8px;
+    color: #2563eb;
+}
+
+/* ================= SKILLS ================= */
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 10px 0;
+    font-size: 17px;
+    transition: color 0.3s;
+}
+
+ul li:hover {
+    color: #2563eb;
+}
+
+/* ================= LINKS & BUTTONS ================= */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.top-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 8px 6px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    background: #ffffff;
+    color: #333;
+    border: 2px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #007bff;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.resume-btn {
+    background: #007bff;
+    color: white;
+}
+
+.resume-btn:hover {
+    background: #0056b3;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-section {
+    padding: 40px;
+    text-align: left;
+}
+
+.contact-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    background: #1f2937;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-item:hover {
+    background: #2563eb;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* ================= CERTIFICATIONS HORIZONTAL SCROLL ================= */
 .cert-scroll-wrapper {
     display: flex;
     gap: 25px;
     overflow-x: auto;
     padding: 20px 0;
     scroll-behavior: smooth;
+    cursor: grab;
 }
 
 .cert-scroll-wrapper::-webkit-scrollbar {
@@ -17,118 +179,325 @@
 }
 
 .cert-scroll-wrapper::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+    background: #888;
     border-radius: 10px;
 }
 
 .cert-card {
-    min-width: 300px;
+    min-width: 280px;
     background: #ffffff;
     border-radius: 18px;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
     cursor: pointer;
 }
 
 .cert-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
 }
 
-.cert-img {
+.cert-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-.cert-card:hover .cert-img {
-    transform: scale(1.05);
 }
 
 .cert-card p {
     margin-top: 12px;
-    font-weight: 600;
-    color: #1f2937;
+    font-weight: 500;
 }
 
-/* ================= MODERN CERTIFICATE POPUP ================= */
+/* ================= MODERN MODAL ================= */
+.modern-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-.cert-modal {
+.modern-modal.active {
+    display: flex;
+}
+
+.modern-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #2563eb;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    text-align: center;
+}
+
+/* Modal Image */
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    animation: zoomIn 0.3s ease;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Hover Effect */
+.cert-img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cert-img:hover {
+    transform: scale(1.05);
+}
+/* ================= CERTIFICATIONS HORIZONTAL SCROLL ================= */
+
+.cert-scroll-wrapper {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.cert-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+}
+
+.cert-card {
+    min-width: 300px;
+    flex: 0 0 auto;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cert-img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cert-img:hover {
+    transform: scale(1.05);
+}
+
+/* Optional: Better scrollbar */
+.cert-scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cert-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+/* ================= MODERN CERTIFICATE MODAL ================= */
+
+.modern-modal {
     position: fixed;
     inset: 0;
     display: none;
     justify-content: center;
     align-items: center;
-    background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(10px);
     z-index: 9999;
-    padding: 20px;
 }
 
-.cert-modal.active {
+.modern-modal.active {
     display: flex;
 }
 
-/* Modal Content Box */
-.cert-modal-content {
-    position: relative;
-    max-width: 900px;
-    width: 95%;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-    animation: modalFade 0.3s ease forwards;
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
 }
 
-/* Modal Image */
-.cert-modal-content img {
-    width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
+.modal-box {
+    position: relative;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: popupZoom 0.35s ease;
+    z-index: 10;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 75vh;
     border-radius: 12px;
 }
 
-/* Close Button */
-.cert-close {
+.close-btn {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
     font-size: 28px;
-    font-weight: bold;
-    color: #1f2937;
     cursor: pointer;
-    transition: 0.3s ease;
+    color: #333;
+    transition: 0.3s;
 }
 
-.cert-close:hover {
-    color: #ef4444;
+.close-btn:hover {
+    color: #ff4d4d;
     transform: rotate(90deg);
 }
 
 /* Smooth Animation */
-@keyframes modalFade {
+@keyframes popupZoom {
     from {
         opacity: 0;
-        transform: scale(0.85);
+        transform: scale(0.8);
     }
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
+/* ================= MODERN FOOTER ================= */
 
-/* Responsive */
-@media (max-width: 768px) {
-    .cert-card {
-        min-width: 260px;
-    }
-
-    .cert-modal-content {
-        padding: 15px;
-    }
+.modern-footer {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    padding: 60px 20px 20px;
+    font-family: 'Poppins', sans-serif;
 }
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #dddddd;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #dddddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #00c6ff;
+    padding-left: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 20px;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00c6ff;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.back-to-top {
+    background: #00c6ff;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-to-top:hover {
+    background: #ffffff;
+    color: #2c5364;
+}
+
