@@ -51,7 +51,7 @@ section {
     margin: 40px auto;
     padding: 40px;
     border-radius: 15px;
-    max-width: 900px;
+    max-width: 1100px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
 }
@@ -73,71 +73,7 @@ section:hover {
     color: #2563eb;
 }
 
-/* ================= SKILLS ================= */
-ul {
-    list-style: none;
-}
-
-ul li {
-    padding: 10px 0;
-    font-size: 17px;
-    transition: color 0.3s;
-}
-
-ul li:hover {
-    color: #2563eb;
-}
-
-/* ================= LINKS & BUTTONS ================= */
-a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.top-buttons {
-    margin-top: 20px;
-}
-
-.btn {
-    display: inline-block;
-    margin: 8px 6px;
-    padding: 10px 22px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 30px;
-    background: #ffffff;
-    color: #333;
-    border: 2px solid #007bff;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background: #007bff;
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
-}
-
-.resume-btn {
-    background: #007bff;
-    color: white;
-}
-
-.resume-btn:hover {
-    background: #0056b3;
-}
-
 /* ================= CONTACT SECTION ================= */
-.contact-section {
-    padding: 40px;
-    text-align: left;
-}
-
 .contact-grid {
     display: flex;
     gap: 20px;
@@ -164,193 +100,99 @@ a:hover {
     box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
-/* ================= CERTIFICATIONS HORIZONTAL SCROLL ================= */
+/* ===================================================== */
+/* ========== PROFESSIONAL CERTIFICATIONS ============== */
+/* ===================================================== */
+
+.certifications-section {
+    padding: 40px 0;
+}
+
 .cert-scroll-wrapper {
     display: flex;
-    gap: 25px;
-    overflow-x: auto;
-    padding: 20px 0;
-    scroll-behavior: smooth;
-    cursor: grab;
-}
-
-.cert-scroll-wrapper::-webkit-scrollbar {
-    height: 8px;
-}
-
-.cert-scroll-wrapper::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.cert-card {
-    min-width: 280px;
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.cert-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-}
-
-.cert-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.cert-card p {
-    margin-top: 12px;
-    font-weight: 500;
-}
-
-/* ================= MODERN MODAL ================= */
-.modern-modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(6px);
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.modern-modal.active {
-    display: flex;
-}
-
-.modern-modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 15px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-    animation: zoomIn 0.3s ease;
-}
-
-.close-btn {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 40px;
-    color: #fff;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close-btn:hover {
-    color: #2563eb;
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* Modal Background */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.85);
-    text-align: center;
-}
-
-/* Modal Image */
-.modal-content {
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(255,255,255,0.3);
-    animation: zoomIn 0.3s ease;
-}
-
-/* Close Button */
-.close {
-    position: absolute;
-    top: 25px;
-    right: 40px;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-/* Animation */
-@keyframes zoomIn {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* Hover Effect */
-.cert-img {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.cert-img:hover {
-    transform: scale(1.05);
-}
-/* ================= CERTIFICATIONS HORIZONTAL SCROLL ================= */
-
-.cert-scroll-wrapper {
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding: 20px 10px;
+    scroll-behavior: smooth;
 }
 
 .cert-row {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: nowrap;
-    scroll-behavior: smooth;
 }
 
+/* ================= CERTIFICATE CARD ================= */
+
 .cert-card {
-    min-width: 300px;
     flex: 0 0 auto;
+    min-width: 500px;
+    max-width: 550px;
     background: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     text-align: center;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+.cert-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(37,99,235,0.06), transparent);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.cert-card:hover::before {
+    opacity: 1;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* ================= CERTIFICATE IMAGE ================= */
 
 .cert-img {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: #f8fafc;
+    padding: 15px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .cert-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
-/* Optional: Better scrollbar */
+.cert-card p {
+    margin-top: 18px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+/* ================= SCROLLBAR ================= */
+
 .cert-scroll-wrapper::-webkit-scrollbar {
     height: 8px;
 }
 
 .cert-scroll-wrapper::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #cbd5e1;
     border-radius: 10px;
 }
-/* ================= MODERN CERTIFICATE MODAL ================= */
+
+/* ================= PROFESSIONAL MODAL ================= */
 
 .modern-modal {
     position: fixed;
@@ -358,42 +200,38 @@ a:hover {
     display: none;
     justify-content: center;
     align-items: center;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
     z-index: 9999;
+    padding: 20px;
 }
 
 .modern-modal.active {
     display: flex;
 }
 
-.modal-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-}
-
 .modal-box {
-    position: relative;
     background: #ffffff;
-    padding: 20px;
-    border-radius: 16px;
-    max-width: 90%;
-    max-height: 90%;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    animation: popupZoom 0.35s ease;
-    z-index: 10;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 95%;
+    max-height: 95%;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    animation: smoothZoom 0.3s ease;
+    position: relative;
 }
 
 .modal-image {
     max-width: 100%;
-    max-height: 75vh;
-    border-radius: 12px;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 14px;
 }
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 12px;
+    right: 18px;
     font-size: 28px;
     cursor: pointer;
     color: #333;
@@ -401,103 +239,49 @@ a:hover {
 }
 
 .close-btn:hover {
-    color: #ff4d4d;
+    color: #2563eb;
     transform: rotate(90deg);
 }
 
-/* Smooth Animation */
-@keyframes popupZoom {
+@keyframes smoothZoom {
     from {
+        transform: scale(0.85);
         opacity: 0;
-        transform: scale(0.8);
     }
     to {
-        opacity: 1;
         transform: scale(1);
+        opacity: 1;
     }
 }
-/* ================= MODERN FOOTER ================= */
 
-.modern-footer {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #ffffff;
-    padding: 60px 20px 20px;
-    font-family: 'Poppins', sans-serif;
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .cert-card {
+        min-width: 420px;
+        max-width: 450px;
+    }
+
+    .cert-img {
+        max-height: 420px;
+    }
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-}
+/* Mobile */
+@media (max-width: 768px) {
+    .cert-scroll-wrapper {
+        justify-content: flex-start;
+    }
 
-.footer-col h3,
-.footer-col h4 {
-    margin-bottom: 15px;
-}
+    .cert-card {
+        min-width: 85%;
+        max-width: 85%;
+        padding: 18px;
+    }
 
-.footer-col p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #dddddd;
+    .cert-img {
+        max-height: 350px;
+        padding: 10px;
+    }
 }
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 8px;
-}
-
-.footer-col ul li a {
-    color: #dddddd;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-col ul li a:hover {
-    color: #00c6ff;
-    padding-left: 5px;
-}
-
-.social-icons a {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 20px;
-    color: #ffffff;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    color: #00c6ff;
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    margin-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-}
-
-.back-to-top {
-    background: #00c6ff;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.back-to-top:hover {
-    background: #ffffff;
-    color: #2c5364;
-}
-
