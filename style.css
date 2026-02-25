@@ -28,7 +28,7 @@ header {
     object-fit: cover;
     border: 5px solid white;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .profile-img:hover {
@@ -51,23 +51,22 @@ section {
     margin: 40px auto;
     padding: 40px;
     border-radius: 15px;
-    max-width: 900px;
+    max-width: 1100px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 section:hover {
     transform: translateY(-5px);
 }
 
-/* ================= SECTION TITLE ================= */
-.section-title {
+h2 {
     font-size: 26px;
     margin-bottom: 25px;
     color: #1f2937;
 }
 
-.section-title i {
+h2 i {
     margin-right: 8px;
     color: #2563eb;
 }
@@ -80,24 +79,14 @@ ul {
 ul li {
     padding: 10px 0;
     font-size: 17px;
-    transition: color 0.3s;
+    transition: 0.3s;
 }
 
 ul li:hover {
     color: #2563eb;
 }
 
-/* ================= LINKS & BUTTONS ================= */
-a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
+/* ================= BUTTONS ================= */
 .btn {
     display: inline-block;
     margin: 8px 6px;
@@ -107,7 +96,7 @@ a:hover {
     background: #ffffff;
     color: #333;
     border: 2px solid #007bff;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
@@ -117,23 +106,19 @@ a:hover {
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
 }
 
-/* ================= CERTIFICATIONS SECTION ================= */
+/* ================= CERTIFICATIONS GRID ================= */
 
 .cert-scroll-wrapper {
-    overflow-x: auto;
     padding: 20px 0;
 }
 
 .cert-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
-    flex-wrap: nowrap;
-    scroll-behavior: smooth;
 }
 
 .cert-card {
-    min-width: 300px;
-    flex: 0 0 auto;
     background: #ffffff;
     padding: 18px;
     border-radius: 18px;
@@ -148,28 +133,14 @@ a:hover {
     box-shadow: 0 18px 40px rgba(0,0,0,0.15);
 }
 
-.cert-img {
+.cert-card img {
     width: 100%;
-    height: 190px;
+    height: 200px;
     object-fit: cover;
     border-radius: 12px;
-    transition: transform 0.3s ease;
 }
 
-.cert-img:hover {
-    transform: scale(1.05);
-}
-
-.cert-scroll-wrapper::-webkit-scrollbar {
-    height: 8px;
-}
-
-.cert-scroll-wrapper::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-/* ================= PREMIUM MODAL ================= */
+/* ================= MODAL ================= */
 
 .modern-modal {
     position: fixed;
@@ -188,15 +159,15 @@ a:hover {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 }
 
 .modal-box {
     position: relative;
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     padding: 25px;
     border-radius: 20px;
-    max-width: 95%;
+    max-width: 90%;
     max-height: 90%;
     box-shadow: 0 25px 60px rgba(0,0,0,0.35);
     animation: popupZoom 0.35s ease;
@@ -236,27 +207,42 @@ a:hover {
     }
 }
 
-/* ================= MODERN FOOTER ================= */
+/* ================= CONTACT ================= */
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    background: #f1f5f9;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #2563eb;
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+/* ================= FOOTER ================= */
 
 .modern-footer {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #ffffff;
-    padding: 60px 20px 20px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    padding: 50px 20px 20px;
+    margin-top: 40px;
 }
 
 .footer-bottom {
-    margin-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
     font-size: 14px;
+    margin-top: 20px;
 }
