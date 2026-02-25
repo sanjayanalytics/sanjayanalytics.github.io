@@ -1,26 +1,45 @@
-function openModal(imageSrc) {
+// ================= OPEN MODAL =================
+function openModal(card) {
     const modal = document.getElementById("certModal");
     const modalImg = document.getElementById("modalImage");
 
-    modalImg.src = imageSrc;
+    // Get image inside clicked card
+    const img = card.querySelector("img");
+
+    // Set modal image source
+    modalImg.src = img.src;
+
+    // Show modal
     modal.classList.add("active");
 
-    document.body.style.overflow = "hidden"; // prevent background scroll
+    // Disable background scroll
+    document.body.style.overflow = "hidden";
 }
 
+// ================= CLOSE MODAL =================
 function closeModal() {
     const modal = document.getElementById("certModal");
+
     modal.classList.remove("active");
 
+    // Enable scroll again
     document.body.style.overflow = "auto";
 }
 
-// Close when clicking outside image
-document.querySelector(".modal-overlay").addEventListener("click", closeModal);
+// ================= CLOSE WHEN CLICKING OUTSIDE =================
+document.addEventListener("DOMContentLoaded", function () {
 
-// Close on ESC key
-document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-        closeModal();
+    const overlay = document.querySelector(".modal-overlay");
+
+    if (overlay) {
+        overlay.addEventListener("click", closeModal);
     }
+
+    // Close on ESC key
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
+
 });
