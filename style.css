@@ -260,3 +260,37 @@ a:hover {
     justify-content: space-between;
     font-size: 14px;
 }
+/* ================= PREMIUM LOADER ================= */
+
+#premiumLoader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #111827, #1f2937);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    flex-direction: column;
+    color: white;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.spinner {
+    width: 55px;
+    height: 55px;
+    border: 6px solid rgba(255,255,255,0.2);
+    border-top: 6px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
