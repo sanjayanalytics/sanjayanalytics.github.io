@@ -11,154 +11,310 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+/* ================= GLOBAL ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f6f9;
+    color:#333;
+    line-height:1.7;
+}
+
+/* ================= HEADER ================= */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(12px);
+    box-shadow:0 5px 25px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:600;
+    color:#2c3e50;
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 12px;
+    font-weight:500;
+    color:#555;
+    transition:0.3s;
+    position:relative;
+}
+
+nav a:hover,
+nav a.active{
+    color:#2563eb;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:#2563eb;
+    bottom:-5px;
+    left:0;
+    transition:0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after{
+    width:100%;
+}
+
+/* ================= SECTIONS ================= */
+section{
+    padding:110px 20px 80px;
+    max-width:1100px;
+    margin:auto;
+}
+
+h2{
+    font-size:28px;
+    margin-bottom:20px;
+    color:#1e293b;
+}
+
+.section-card{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    transition:0.4s;
+}
+
+.section-card:hover{
+    transform:translateY(-5px);
+}
+
+/* ================= HERO ================= */
+.hero{
+    text-align:center;
+    padding-top:160px;
+}
+
+.profile-img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:4px solid #2563eb;
+}
+
+.hero h1{
+    font-size:32px;
+}
+
+.hero p{
+    color:#666;
+    margin-top:5px;
+}
+
+/* ================= PROJECTS ================= */
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project-card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-6px);
+}
+
+.project-card a{
+    display:inline-block;
+    margin-top:10px;
+    text-decoration:none;
+    color:#2563eb;
+    font-weight:500;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:linear-gradient(135deg,#1e293b,#0f172a);
+    color:#fff;
+    padding:40px 20px;
+    text-align:center;
+    margin-top:50px;
+}
+
+footer p{
+    opacity:0.8;
+    font-size:14px;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    nav{
+        display:none;
+    }
+}
+    </style>
 </head>
 
 <body>
 
-<!-- ================= MODERN NAVBAR ================= -->
-<nav class="navbar">
+<!-- ================= HEADER ================= -->
+<header>
     <div class="nav-container">
-        <div class="logo">Sanjay.</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- ================= HERO SECTION ================= -->
-<header class="hero-section">
-    <div class="hero-content">
-        <img src="assets/Profile%20image.jpg" alt="Profile Image" class="profile-img">
-        <h1>Sanjay Kumar Thakur</h1>
-        <h2 class="typing-text"></h2>
-        <p class="hero-desc">
-            Transforming Data into Insights | Excel • Power BI • SQL • Python
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="assets/Sanjay_Kumar_Thakur_Resume.pdf" download class="btn-outline">
-                Download Resume
-            </a>
-        </div>
+        <div class="logo">Sanjay Kumar Thakur</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </div>
 </header>
 
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <img src="assets/Profile image.jpg" class="profile-img">
+    <h1>Data Analyst</h1>
+    <p>Transforming Data into Meaningful Business Insights</p>
+</section>
+
 <!-- ================= ABOUT ================= -->
-<section id="about" class="section about-section">
-    <div class="container">
-        <h2><i class="fas fa-user-circle section-icon"></i> About Me</h2>
+<section id="about" class="reveal">
+    <div class="section-card">
+        <h2>About Me</h2>
         <p>
-            I am a passionate Data Analyst with an MSc in Mathematics and strong analytical thinking skills.
-            I specialize in Excel, Power BI, SQL, and Python to transform complex data into meaningful insights.
-            I enjoy building dashboards and helping businesses make data-driven decisions.
+            I am a passionate Data Analyst with MSc in Mathematics.
+            I specialize in Excel, Power BI, SQL and Python.
+            I build dashboards and convert raw data into actionable insights.
         </p>
     </div>
 </section>
 
 <!-- ================= SKILLS ================= -->
-<section id="skills" class="section skills-section">
-    <div class="container">
-        <h2><i class="fas fa-laptop-code section-icon"></i> Skills</h2>
-        <ul class="skills-list">
-            <li><i class="fas fa-file-excel"></i> Excel</li>
-            <li><i class="fas fa-chart-bar"></i> Power BI</li>
-            <li><i class="fas fa-database"></i> SQL</li>
-            <li><i class="fab fa-python"></i> Python</li>
-            <li><i class="fas fa-project-diagram"></i> Power Query</li>
-            <li><i class="fas fa-robot"></i> AI for Data Analysis</li>
-        </ul>
+<section id="skills" class="reveal">
+    <div class="section-card">
+        <h2>Skills</h2>
+        <p>Excel | Power BI | SQL | Python | Power Query | AI for Analytics</p>
     </div>
 </section>
 
 <!-- ================= PROJECTS ================= -->
-<section id="projects" class="section projects-section">
-    <div class="container">
-        <h2><i class="fas fa-briefcase section-icon"></i> Projects</h2>
+<section id="projects" class="reveal">
+    <h2>Projects</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <h3>Excel Superstore Dashboard</h3>
+            <p>Sales KPI dashboard with interactive visuals.</p>
+            <a href="https://github.com/sanjayanalytics/Excel-Super-Store-Sales-Dashboard" target="_blank">View Project</a>
+        </div>
 
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Excel Superstore Dashboard</h3>
-                <p>Sales analysis dashboard with KPIs and interactive visuals.</p>
-                <a href="https://github.com/sanjayanalytics/Excel-Super-Store-Sales-Dashboard" target="_blank">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Excel Data Cleaning</h3>
-                <p>Advanced data cleaning using formulas & Power Query.</p>
-                <a href="#">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <h3>SQL Data Analysis</h3>
-                <p>Business insights using complex SQL queries.</p>
-                <a href="#">View Project</a>
-            </div>
+        <div class="project-card">
+            <h3>SQL Data Analysis</h3>
+            <p>Business insights using advanced SQL queries.</p>
+            <a href="#">View Project</a>
         </div>
     </div>
 </section>
 
 <!-- ================= CERTIFICATIONS ================= -->
-<section id="certifications" class="section certifications-section">
-    <div class="container">
-        <h2><i class="fas fa-certificate section-icon"></i> Certifications</h2>
-
-        <div class="cert-scroll-wrapper">
-            <div class="cert-row">
-                <!-- Your certification cards remain same -->
-                <!-- (I kept them unchanged for cleanliness) -->
-            </div>
-        </div>
+<section id="certifications" class="reveal">
+    <div class="section-card">
+        <h2>Certifications</h2>
+        <p>Excel Mastery | Power BI Mastery | Power Query Mastery | AI in MS Office</p>
     </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
-<section id="contact" class="section contact-section">
-    <div class="container">
-        <h2><i class="fas fa-address-card section-icon"></i> Contact</h2>
-
-        <div class="contact-grid">
-            <a href="mailto:sanjaykumarthakur516@gmail.com" class="contact-item">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-
-            <a href="https://linkedin.com/in/sanjay-kumar-thakur-data-analyst" target="_blank" class="contact-item">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-
-            <a href="https://github.com/sanjayanalytics" target="_blank" class="contact-item">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-        </div>
+<section id="contact" class="reveal">
+    <div class="section-card">
+        <h2>Contact</h2>
+        <p>Email: sanjaykumarthakur516@gmail.com</p>
+        <p>LinkedIn: linkedin.com/in/sanjay-kumar-thakur-data-analyst</p>
+        <p>GitHub: github.com/sanjayanalytics</p>
     </div>
 </section>
 
-<!-- ================= MODERN FOOTER ================= -->
-<footer class="modern-footer">
-    <div class="footer-content">
-        <h3>Sanjay Kumar Thakur</h3>
-        <p>Data Analyst | Turning Raw Data into Business Insights</p>
-
-        <div class="footer-socials">
-            <a href="mailto:sanjaykumarthakur516@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/sanjay-kumar-thakur-data-analyst" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/sanjayanalytics" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2026 Sanjay Kumar Thakur | All Rights Reserved</p>
-        </div>
-    </div>
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2026 Sanjay Kumar Thakur | Designed with Passion & Precision</p>
 </footer>
 
-<!-- Scroll To Top -->
-<button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+<script>
+// Scroll Reveal
+window.addEventListener("scroll", function(){
+    document.querySelectorAll(".reveal").forEach(function(el){
+        let position = el.getBoundingClientRect().top;
+        let windowHeight = window.innerHeight;
+        if(position < windowHeight - 100){
+            el.classList.add("active");
+        }
+    });
+});
 
-<script src="script.js"></script>
+// Active Nav Highlight
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if(pageYOffset >= sectionTop){
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(a => {
+        a.classList.remove("active");
+        if(a.getAttribute("href") === "#" + current){
+            a.classList.add("active");
+        }
+    });
+});
+</script>
+
 </body>
 </html>
