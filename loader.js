@@ -1,11 +1,15 @@
-// ================= PREMIUM LOADER =================
+// ================= SAFE PREMIUM LOADER FIX =================
 
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
+
     const loader = document.getElementById("premiumLoader");
 
-    setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.visibility = "hidden";
-        document.body.style.overflow = "auto";
-    }, 800);
+    if (loader) {
+        setTimeout(() => {
+            loader.style.opacity = "0";
+            loader.style.visibility = "hidden";
+            document.body.style.overflow = "auto";
+        }, 1200);
+    }
+
 });
