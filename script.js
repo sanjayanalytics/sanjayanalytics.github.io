@@ -1,6 +1,7 @@
 // Wait until page fully loads
 document.addEventListener("DOMContentLoaded", function () {
 
+    // ================= MODAL VARIABLES =================
     const modal = document.getElementById("certModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".close-btn");
@@ -23,13 +24,48 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.overflow = "auto";
     }
 
-    closeBtn.addEventListener("click", closeModal);
-    overlay.addEventListener("click", closeModal);
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (overlay) overlay.addEventListener("click", closeModal);
 
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
             closeModal();
         }
     });
+
+
+    // ================= TYPING EFFECT =================
+    const text = "Data Analyst";
+    let index = 0;
+    const typingElement = document.querySelector(".typing-text");
+
+    function typeEffect() {
+        if (typingElement && index < text.length) {
+            typingElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 100);
+        }
+    }
+    typeEffect();
+
+
+    // ================= SCROLL TO TOP BUTTON =================
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", function () {
+        if (scrollBtn) {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        }
+    });
+
+    if (scrollBtn) {
+        scrollBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
 });
